@@ -1,0 +1,21 @@
+export const TRANSLATIONS_RU = {
+  email: 'Введите Email:',
+  password: 'Введите пароль:',
+  login: 'Войти',
+  signup: 'Регистрация',
+  remember: 'Запомнить меня',
+  forgotPass: 'Забыли пароль?',
+  name: 'Введите имя:',
+  newPass: 'Новый пароль:',
+  repeatPass: 'Повторите пароль:',
+  alreadyRegistred: 'Уже зарегистрированы?',
+  resetPass: 'Изменить пароль',
+  confirmEmail: 'Подтвердить email',
+  errorEmail: 'Проверьте свой email',
+  errorRequired: 'Это поле должно быть обязательным',
+  errorStringLength: 'Неподходящая длина строки',
+  errorMatchPass:
+    'Пароль должен содержать Хотя бы одну заглавную букву, цифру и символ',
+  errorEqualPass: 'Пароли должны быть одинаковыми',
+  languageSelect: 'Язык',
+};
