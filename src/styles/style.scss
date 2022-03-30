@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  width: 100vw;
+  height: 100vh;
+  margin: 0%;
+
+  #root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container {
+    width: 30%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #515274;
+    box-shadow: 1px 1px 10px rgba(102, 102, 102, 0.2);
+    border-radius: 16px;
+    padding: 60px, 120px, 60px, 120px;
+    gap: 10px;
+
+    .ant-breadcrumb {
+      display: flex;
+      justify-content: space-evenly;
+      width: 50%;
+      align-items: center;
+      font-size: 24px;
+
+      .ant-breadcrumb-separator {
+        color: #ffffff !important;
+      }
+    }
+
+    .primal-link {
+      color: #aa7edd !important;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    .secondary-link {
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+      color: #ffffff !important;
+    }
+
+    .input-container {
+      width: 70%;
+      height: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .forgot-options-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .forgot-pass-link {
+          color: #aa7edd;
+          margin-bottom: 10px;
+        }
+      }
+
+      .options-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .forgot-pass-link {
+          color: #aa7edd;
+        }
+
+        .checkbox-remember-me {
+          color: white;
+          background-color: #515274;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+
+      .label {
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .login-btn {
+        width: 100%;
+        height: 40px;
+        background: #aa7edd;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+        border: none;
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .input {
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.05));
+        background-color: #515274;
+
+        input {
+          background-color: #515274;
+        }
+      }
+    }
+  }
+}
