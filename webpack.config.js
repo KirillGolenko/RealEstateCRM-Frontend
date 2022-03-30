@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -18,6 +19,7 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components'),
+      '@assets': path.resolve(__dirname, 'public/assets'),
       '@styles': path.resolve(__dirname, 'src/styles'),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -30,6 +32,7 @@ module.exports = {
         collapseWhitespace: !isDev,
       },
     }),
+    new Dotenv(),
   ],
   devServer: {
     historyApiFallback: true,
@@ -61,6 +64,11 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
       },
     ],
   },
