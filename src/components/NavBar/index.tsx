@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+import '../../translation/i18n';
+
 import { Breadcrumb } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -10,6 +13,8 @@ interface INavBarProps {
 }
 
 const NavBar: FC<INavBarProps> = ({ type }) => {
+  const { t } = useTranslation();
+
   return (
     <Breadcrumb separator=''>
       <Breadcrumb.Item key='login'>
@@ -17,7 +22,7 @@ const NavBar: FC<INavBarProps> = ({ type }) => {
           className={type === 'login' ? 'primal-link' : 'secondary-link'}
           to='/login'
         >
-          Log in
+          {t('login')}
         </Link>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
@@ -26,7 +31,7 @@ const NavBar: FC<INavBarProps> = ({ type }) => {
           className={type === 'signup' ? 'primal-link' : 'secondary-link'}
           to='/signup'
         >
-          Sign up
+          {t('signup')}
         </Link>
       </Breadcrumb.Item>
     </Breadcrumb>

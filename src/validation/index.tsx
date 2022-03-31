@@ -1,28 +1,54 @@
 import * as Yup from 'yup';
 
+import i18n from 'i18next';
+
 const passRegExp = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]$/;
 
 export const loginSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required().max(40).trim(),
-  password: Yup.string().matches(passRegExp).trim().min(6),
+  email: Yup.string()
+    .email(i18n.t('errorEmail'))
+    .required(i18n.t('errorRequired'))
+    .max(40, i18n.t('errorStringLength'))
+    .trim(),
+  password: Yup.string()
+    .matches(passRegExp, i18n.t('errorMatchPass'))
+    .trim()
+    .min(6, i18n.t('errorStringLength'))
+    .max(20, i18n.t('errorStringLength')),
 });
 
 export const signupSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required().max(40).trim(),
-  name: Yup.string().required().trim().max(30),
-  password: Yup.string().matches(passRegExp).trim().min(6),
+  email: Yup.string()
+    .email(i18n.t('errorEmail'))
+    .required(i18n.t('errorRequired'))
+    .max(40, i18n.t('errorStringLength'))
+    .trim(),
+  name: Yup.string()
+    .required(i18n.t('errorRequired'))
+    .trim()
+    .max(30, i18n.t('errorStringLength')),
+  password: Yup.string()
+    .matches(passRegExp, i18n.t('errorMatchPass'))
+    .trim()
+    .min(6, i18n.t('errorStringLength'))
+    .max(20, i18n.t('errorStringLength')),
 });
 
 export const forgotSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required().max(40).trim(),
+  email: Yup.string()
+    .email(i18n.t('errorEmail'))
+    .required(i18n.t('errorRequired'))
+    .max(40, i18n.t('errorStringLength'))
+    .trim(),
   password: Yup.string()
-    .matches(passRegExp, 'password should contain symbols and capital letters')
+    .matches(passRegExp, i18n.t('errorMatchPass'))
     .trim()
-    .min(6),
+    .min(6, i18n.t('errorStringLength'))
+    .max(20, i18n.t('errorStringLength')),
   repeat: Yup.string().when('password', (password, schema) => {
     return schema.test({
       test: (repeat: string) => repeat === password,
-      message: 'Passwords must be equal',
+      message: i18n.t('errorEqualPass'),
     });
   }),
 });

@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+import '../../translation/i18n';
+
 import { Checkbox, Button } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -11,12 +14,13 @@ interface IOptionsBarProps {
 }
 
 const OptionsBar: FC<IOptionsBarProps> = ({ isSubmitting, type }) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className='options-content'>
-        <Checkbox className='checkbox-remember-me'>Remember me</Checkbox>
+        <Checkbox className='checkbox-remember-me'>{t('remember')}</Checkbox>
         <Link className='forgot-pass-link' to='/forgot_password'>
-          Forgot password?
+          {t('forgotPass')}
         </Link>
       </div>
       <Button
@@ -25,7 +29,7 @@ const OptionsBar: FC<IOptionsBarProps> = ({ isSubmitting, type }) => {
         className='login-btn'
         type='primary'
       >
-        {type === 'login' ? 'Log in' : 'Sign up'}
+        {type === 'login' ? t('login') : t('signup')}
       </Button>
     </>
   );

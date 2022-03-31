@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
+import '../../translation/i18n';
 
 import { forgotSchema } from '../../validation';
+
+import LanguageSelector from '../LanguageSelector';
 
 import { Button, Input } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
@@ -11,9 +15,11 @@ import 'antd/dist/antd.css';
 
 const ForgotPass = () => {
   const [confirmed, setConfirmed] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div className='login-container'>
+      <LanguageSelector />
       <img src='/assets/logo.svg' alt='header logo' />
 
       <Formik
@@ -33,7 +39,7 @@ const ForgotPass = () => {
         }) => (
           <form className='input-container' onSubmit={handleSubmit}>
             <span className='label'>
-              Email:
+              {t('email')}
               <Input
                 name='email'
                 value={values.email}
@@ -48,7 +54,7 @@ const ForgotPass = () => {
             {confirmed && (
               <>
                 <span className='label'>
-                  New password:
+                  {t('newPass')}
                   <Input.Password
                     size='large'
                     name='password'
@@ -64,7 +70,7 @@ const ForgotPass = () => {
                   ) : null}
                 </span>
                 <span className='label'>
-                  Repeat password:
+                  {t('repeatPass')}
                   <Input.Password
                     size='large'
                     name='repeat'
@@ -83,7 +89,7 @@ const ForgotPass = () => {
             )}
             <div className='forgot-options-content'>
               <Link className='forgot-pass-link' to='/login'>
-                Already have an account?
+                {t('alreadyRegistred')}
               </Link>
               {confirmed ? (
                 <Button
@@ -92,7 +98,7 @@ const ForgotPass = () => {
                   className='login-btn'
                   type='primary'
                 >
-                  Reset password
+                  {t('resetPass')}
                 </Button>
               ) : (
                 <Button
@@ -100,7 +106,7 @@ const ForgotPass = () => {
                   className='login-btn'
                   type='primary'
                 >
-                  Confirm your email
+                  {t('confirmEmail')}
                 </Button>
               )}
             </div>

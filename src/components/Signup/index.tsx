@@ -2,9 +2,13 @@ import React from 'react';
 
 import { Formik } from 'formik';
 
+import { useTranslation } from 'react-i18next';
+import '../../translation/i18n';
+
 import GoogleButton from '../GoogleLogin';
 import NavBar from '../NavBar';
 import OptionsBar from '../OptionsBar';
+import LanguageSelector from '../LanguageSelector';
 
 import { signupSchema } from '../../validation';
 
@@ -13,8 +17,11 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 const Signup = () => {
+  const { t } = useTranslation();
+
   return (
     <div className='login-container'>
+      <LanguageSelector />
       <img src='/assets/logo.svg' alt='header logo' />
       <NavBar type='signup' />
       <Formik
@@ -34,7 +41,7 @@ const Signup = () => {
         }) => (
           <form className='input-container' onSubmit={handleSubmit}>
             <span className='label'>
-              Name:
+              {t('name')}
               <Input
                 name='name'
                 value={values.name}
@@ -47,7 +54,7 @@ const Signup = () => {
               ) : null}
             </span>
             <span className='label'>
-              Email:
+              {t('email')}
               <Input
                 name='email'
                 value={values.email}
@@ -60,7 +67,7 @@ const Signup = () => {
               ) : null}
             </span>
             <span className='label'>
-              Password:
+              {t('password')}
               <Input.Password
                 size='large'
                 className='input'
