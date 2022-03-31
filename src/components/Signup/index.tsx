@@ -1,6 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
+import '../../translation/i18n';
+
+import { ISignupForm } from '../types';
 
 import GoogleButton from '../GoogleLogin';
 import NavBar from '../NavBar';
@@ -13,6 +18,14 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 const Signup = () => {
+  const { t } = useTranslation();
+
+  const handleSignUp = async (values: ISignupForm) => {
+    await axios.post(`${process.env.REACT_APP_BE_URL}auth/registration`, {
+      values,
+    });
+  };
+
   return (
     <div className='login-container'>
       <img src='/assets/logo.svg' alt='header logo' />
@@ -21,6 +34,7 @@ const Signup = () => {
         validationSchema={signupSchema}
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={(values, { setSubmitting }) => {
+          handleSignUp(values);
           setSubmitting(false);
         }}
       >
