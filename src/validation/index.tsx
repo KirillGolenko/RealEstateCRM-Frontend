@@ -36,15 +36,20 @@ export const signupSchema = Yup.object().shape({
 });
 
 export const forgotSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required().max(40).trim(),
+  email: Yup.string()
+    .email(i18n.t('errorEmail'))
+    .required(i18n.t('errorRequired'))
+    .max(40, i18n.t('errorStringLength'))
+    .trim(),
   password: Yup.string()
     .matches(checkPass, i18n.t('errorMatchPass'))
     .trim()
-    .min(6),
+    .min(6, i18n.t('errorStringLength'))
+    .max(20, i18n.t('errorStringLength')),
   repeat: Yup.string().when('password', (password, schema) => {
     return schema.test({
       test: (repeat: string) => repeat === password,
-      message: 'Passwords must be equal',
+      message: i18n.t('errorEqualPass'),
     });
   }),
 });

@@ -10,6 +10,7 @@ import { ISignupForm } from '../types';
 import GoogleButton from '../GoogleLogin';
 import NavBar from '../NavBar';
 import OptionsBar from '../OptionsBar';
+import LanguageSelector from '../LanguageSelector';
 
 import { signupSchema } from '../../validation';
 
@@ -28,6 +29,7 @@ const Signup = () => {
 
   return (
     <div className='login-container'>
+      <LanguageSelector />
       <img src='/assets/logo.svg' alt='header logo' />
       <NavBar type='signup' />
       <Formik
@@ -48,7 +50,7 @@ const Signup = () => {
         }) => (
           <form className='input-container' onSubmit={handleSubmit}>
             <span className='label'>
-              Name:
+              {t('name')}
               <Input
                 name='name'
                 value={values.name}
@@ -61,7 +63,7 @@ const Signup = () => {
               ) : null}
             </span>
             <span className='label'>
-              Email:
+              {t('email')}
               <Input
                 name='email'
                 value={values.email}
@@ -74,7 +76,7 @@ const Signup = () => {
               ) : null}
             </span>
             <span className='label'>
-              Password:
+              {t('password')}
               <Input.Password
                 size='large'
                 className='input'
