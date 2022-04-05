@@ -1,4 +1,7 @@
 import React from 'react';
+import axios from 'axios';
+
+import { ILoginForm } from '../../types';
 
 import { Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +21,12 @@ import 'antd/dist/antd.css';
 const Login = () => {
   const { t } = useTranslation();
 
+  const handleLogin = async (values: ILoginForm) => {
+    await axios.post(`${process.env.REACT_APP_BE_URL}/auth/login`, {
+      ...values,
+    });
+  };
+
   return (
     <div className='login-container'>
       <LanguageSelector />
@@ -27,6 +36,7 @@ const Login = () => {
         validationSchema={loginSchema}
         initialValues={{ email: '', password: '' }}
         onSubmit={(values, { setSubmitting }) => {
+          handleLogin(values);
           setSubmitting(false);
         }}
       >

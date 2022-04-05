@@ -24,7 +24,7 @@ export const signupSchema = Yup.object().shape({
     .required(i18n.t('errorRequired'))
     .max(40, i18n.t('errorStringLength'))
     .trim(),
-  name: Yup.string()
+  username: Yup.string()
     .required(i18n.t('errorRequired'))
     .trim()
     .max(30, i18n.t('errorStringLength')),

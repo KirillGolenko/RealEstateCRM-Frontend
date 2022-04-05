@@ -4,7 +4,7 @@ export interface ILoginForm {
 }
 
 export interface ISignupForm extends ILoginForm {
-  name: string;
+  username: string;
 }
 
 export interface IForgotForm extends ILoginForm {
