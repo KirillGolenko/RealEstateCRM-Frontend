@@ -1,9 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 
 import { Formik } from 'formik';
-
 import { useTranslation } from 'react-i18next';
 import '../../translation/i18n';
+
+import { ISignupForm } from '../../types';
 
 import GoogleButton from '../GoogleLogin';
 import NavBar from '../NavBar';
@@ -19,6 +21,13 @@ import 'antd/dist/antd.css';
 const Signup = () => {
   const { t } = useTranslation();
 
+  const handleSignUp = async (values: ISignupForm) => {
+    console.log('values :>> ', values);
+    await axios.post(`${process.env.REACT_APP_BE_URL}/auth/registration`, {
+      ...values,
+    });
+  };
+
   return (
     <div className='login-container'>
       <LanguageSelector />
@@ -26,8 +35,9 @@ const Signup = () => {
       <NavBar type='signup' />
       <Formik
         validationSchema={signupSchema}
-        initialValues={{ name: '', email: '', password: '' }}
+        initialValues={{ username: '', email: '', password: '' }}
         onSubmit={(values, { setSubmitting }) => {
+          handleSignUp(values);
           setSubmitting(false);
         }}
       >
@@ -43,14 +53,14 @@ const Signup = () => {
             <span className='label'>
               {t('name')}
               <Input
-                name='name'
-                value={values.name}
+                name='username'
+                value={values.username}
                 onChange={handleChange}
                 className='input'
                 size='large'
               />
-              {errors.name && touched.name ? (
-                <div className='error'>{errors.name}</div>
+              {errors.username && touched.username ? (
+                <div className='error'>{errors.username}</div>
               ) : null}
             </span>
             <span className='label'>

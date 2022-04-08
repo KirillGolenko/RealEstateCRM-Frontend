@@ -3,27 +3,30 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../translation/i18n';
 
-import { Select } from 'antd';
+import { Breadcrumb } from 'antd';
 import 'antd/dist/antd.css';
 
 const LanguageSelector = () => {
-  const { t, i18n } = useTranslation();
-  const { Option } = Select;
-
-  const handleChangeLang = (value: string) => {
-    i18n.changeLanguage(value);
-  };
+  const { i18n } = useTranslation();
 
   return (
-    <Select
-      className='language-selector'
-      placeholder={t('languageSelect')}
-      style={{ width: 120 }}
-      onChange={handleChangeLang}
-    >
-      <Option value='en'>English</Option>
-      <Option value='ru'>Русский</Option>
-    </Select>
+    <Breadcrumb className='language-selector' separator=''>
+      <Breadcrumb.Item
+        className={i18n.language === 'ru' ? 'primal-link' : 'secondary-link'}
+        onClick={() => i18n.changeLanguage('ru')}
+        key='ru'
+      >
+        RU
+      </Breadcrumb.Item>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Item
+        className={i18n.language === 'en' ? 'primal-link' : 'secondary-link'}
+        onClick={() => i18n.changeLanguage('en')}
+        key='en'
+      >
+        EN
+      </Breadcrumb.Item>
+    </Breadcrumb>
   );
 };
 

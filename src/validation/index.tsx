@@ -2,7 +2,8 @@ import * as Yup from 'yup';
 
 import i18n from 'i18next';
 
-const passRegExp = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]$/;
+const checkPass =
+  /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]/;
 
 export const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -11,7 +12,7 @@ export const loginSchema = Yup.object().shape({
     .max(40, i18n.t('errorStringLength'))
     .trim(),
   password: Yup.string()
-    .matches(passRegExp, i18n.t('errorMatchPass'))
+    .matches(checkPass, i18n.t('errorMatchPass'))
     .trim()
     .min(6, i18n.t('errorStringLength'))
     .max(20, i18n.t('errorStringLength')),
@@ -23,13 +24,13 @@ export const signupSchema = Yup.object().shape({
     .required(i18n.t('errorRequired'))
     .max(40, i18n.t('errorStringLength'))
     .trim(),
-  name: Yup.string()
+  username: Yup.string()
     .required(i18n.t('errorRequired'))
     .trim()
     .max(30, i18n.t('errorStringLength')),
   password: Yup.string()
-    .matches(passRegExp, i18n.t('errorMatchPass'))
     .trim()
+    .matches(checkPass, i18n.t('errorMatchPass'))
     .min(6, i18n.t('errorStringLength'))
     .max(20, i18n.t('errorStringLength')),
 });
@@ -41,7 +42,7 @@ export const forgotSchema = Yup.object().shape({
     .max(40, i18n.t('errorStringLength'))
     .trim(),
   password: Yup.string()
-    .matches(passRegExp, i18n.t('errorMatchPass'))
+    .matches(checkPass, i18n.t('errorMatchPass'))
     .trim()
     .min(6, i18n.t('errorStringLength'))
     .max(20, i18n.t('errorStringLength')),
