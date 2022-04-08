@@ -1,32 +1,38 @@
 export const sidebarValues = [
   {
     name: 'Dashboard',
-    src: '/assets/dashboard.svg',
+    primalSrc: '/assets/dashboard.svg',
+    secondarySrc: '/assets/dashboard-secondary.svg',
     alt: 'dashboard logo',
   },
   {
     name: 'Calendar',
-    src: '/assets/calendar.svg',
+    primalSrc: '/assets/calendar-primal.svg',
+    secondarySrc: '/assets/calendar.svg',
     alt: 'calendar logo',
   },
   {
     name: 'Tasks',
-    src: '/assets/tasks.svg',
+    primalSrc: '',
+    secondarySrc: '/assets/tasks.svg',
     alt: 'Tasks logo',
   },
   {
     name: 'Property',
-    src: '/assets/property.svg',
+    primalSrc: '',
+    secondarySrc: '/assets/property.svg',
     alt: 'Property logo',
   },
   {
     name: 'Employees',
-    src: '/assets/employees.svg',
+    primalSrc: '',
+    secondarySrc: '/assets/employees.svg',
     alt: 'Employees logo',
   },
   {
     name: 'Clients',
-    src: '/assets/clients.svg',
+    primalSrc: '',
+    secondarySrc: '/assets/clients.svg',
     alt: 'Clients logo',
   },
 ];
@@ -85,5 +91,38 @@ export const events = [
     category: 'Rejection',
     categotyColor: 'red',
     time: '14.06 / 13:25 pm',
+  },
+];
+
+export const members = [
+  {
+    user: 'Kamilla Klynbes',
+    role: 'Agent',
+    checked: false,
+  },
+  {
+    user: 'Steve Joses',
+    role: 'Agent',
+    checked: false,
+  },
+  {
+    user: 'Kate Almore',
+    role: 'Manager',
+    checked: false,
+  },
+  {
+    user: 'Mary Evans',
+    role: 'HR',
+    checked: false,
+  },
+  {
+    user: 'Josephine Marrow',
+    role: 'Realtor',
+    checked: false,
+  },
+  {
+    user: 'Kira Nite',
+    role: 'Sales',
+    checked: false,
   },
 ];

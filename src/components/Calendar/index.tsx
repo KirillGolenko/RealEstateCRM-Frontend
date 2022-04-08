@@ -1,13 +1,29 @@
 import React from 'react';
 
-import { Calendar } from 'antd';
+import CalendarBar from '../CalendarBar';
+import Header from '../Header';
+import SideBar from '../SideBar';
+import MainCalendar from './EventCalendar';
+import Members from './Members';
 
-const CalendarBar = () => {
+const Calendar = () => {
   return (
-    <div className='calendar-container'>
-      <Calendar className='calendar' fullscreen={false} />
+    <div className='dashboard-container'>
+      <SideBar />
+      <div className='dashboard-content'>
+        <Header />
+        <div className='diagramm-content'>
+          <div className='main-calendar-container'>
+            <MainCalendar />
+          </div>
+          <div className='calendar-content'>
+            <CalendarBar />
+            <Members />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default CalendarBar;
+export default Calendar;

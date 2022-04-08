@@ -22,10 +22,13 @@ const Signup = () => {
   const { t } = useTranslation();
 
   const handleSignUp = async (values: ISignupForm) => {
-    console.log('values :>> ', values);
-    await axios.post(`${process.env.REACT_APP_BE_URL}/auth/registration`, {
-      ...values,
-    });
+    const data = await axios.post(
+      `${process.env.REACT_APP_BE_URL}/auth/registration`,
+      {
+        ...values,
+      }
+    );
+    localStorage.setItem('token', data.data);
   };
 
   return (

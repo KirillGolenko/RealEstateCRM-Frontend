@@ -22,9 +22,13 @@ const Login = () => {
   const { t } = useTranslation();
 
   const handleLogin = async (values: ILoginForm) => {
-    await axios.post(`${process.env.REACT_APP_BE_URL}/auth/login`, {
-      ...values,
-    });
+    const data = await axios.post(
+      `${process.env.REACT_APP_BE_URL}/auth/login`,
+      {
+        ...values,
+      }
+    );
+    localStorage.setItem('token', data.data);
   };
 
   return (

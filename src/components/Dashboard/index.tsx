@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CalendarBar from '../Calendar';
+import CalendarBar from '../CalendarBar';
 import Header from '../Header';
 import SideBar from '../SideBar';
 import DiagrammPanel from './DiagrammPanel';
