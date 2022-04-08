@@ -1,11 +1,11 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
-import { useGoogleLogin } from 'react-google-login';
+// import { useGoogleLogin } from 'react-google-login';
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 
-import user from '../../store/user';
+// import user from '../../store/user';
 
 import { Button, Divider } from 'antd';
 import 'antd/dist/antd.css';

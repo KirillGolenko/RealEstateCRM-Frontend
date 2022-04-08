@@ -30,7 +30,14 @@ const SideBar = () => {
             />
           )}
           <div className='sidebar-name'>
-            <img src={item.src} alt={item.alt} />
+            <img
+              src={
+                location.pathname.includes(item.name.toLowerCase())
+                  ? item.primalSrc
+                  : item.secondarySrc
+              }
+              alt={item.alt}
+            />
             <p
               className={
                 location.pathname.includes(item.name.toLowerCase())

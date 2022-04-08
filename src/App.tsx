@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
+import Calendar from './components/Calendar';
 import DashBoard from './components/Dashboard';
 import ForgotPass from './components/ForgotPass';
 import Login from './components/Login';
@@ -11,7 +12,7 @@ const App = () => {
     <Routes>
       <Route path='login' element={<Login />} />
       <Route path='dashboard' element={<DashBoard />} />
-      <Route path='calendar' element={<DashBoard />} />
+      <Route path='calendar' element={<Calendar />} />
       <Route path='tasks' element={<DashBoard />} />
       <Route path='property' element={<DashBoard />} />
       <Route path='employees' element={<DashBoard />} />

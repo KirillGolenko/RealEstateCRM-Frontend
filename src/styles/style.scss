@@ -338,8 +338,12 @@ body {
           }
         }
 
+        .dashboard {
+          margin: 30px 30px 0 65px !important;
+        }
+
         .calendar-container {
-          margin: 30px 30px 0 65px;
+          margin: 0 30px 0 30px;
 
           .calendar {
             background: #13132b;
@@ -723,4 +727,160 @@ body {
     margin-top: 0;
     border-top: 1px solid #8c8c8c;
   }
+}
+
+///////////calendar
+
+.members-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #13132b;
+  margin: 30px;
+  border-radius: 12px;
+  height: 500px;
+  overflow: auto;
+
+  .member-info {
+    margin-left: 12px;
+
+    .user-name {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #bfbfbf;
+      margin: 0;
+    }
+
+    .user-role {
+      color: #67748e;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      margin: 0;
+    }
+  }
+
+  .members-content {
+    // padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .ant-divider {
+    border-top: 1px solid #8c8c8c;
+    margin: 0;
+  }
+
+  .ant-checkbox-wrapper {
+    padding: 12px;
+
+    .checkbox-text {
+      color: #bfbfbf;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 12px;
+    }
+  }
+
+  .members-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    h1 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      color: #ffffff;
+    }
+  }
+}
+
+.main-calendar-container {
+  width: 76%;
+  margin-left: 30px;
+  height: 87vh;
+}
+
+.mbsc-ios-dark.mbsc-eventcalendar .mbsc-calendar-header,
+.mbsc-ios-dark.mbsc-eventcalendar .mbsc-calendar-week-days {
+  background-color: #13132b;
+}
+
+.mbsc-ios.mbsc-calendar-width-md .mbsc-schedule-all-day-wrapper {
+  background-color: #22223a;
+  display: none;
+}
+
+.mbsc-ios-dark.mbsc-schedule-time-indicator {
+  background-color: #13132b;
+  color: white;
+  border-color: #9769cc;
+}
+
+.mbsc-ios-dark.mbsc-schedule-time-indicator-time {
+  background-color: #22223a;
+  color: white;
+  border-color: #9769cc;
+}
+
+.mbsc-ios-dark.mbsc-selected .mbsc-calendar-cell-text {
+  background-color: #9769cc;
+  color: white;
+  border-color: #9769cc;
+}
+
+.mbsc-ios-dark.mbsc-hover .mbsc-calendar-cell-text {
+  background-color: #22223a;
+  color: white;
+  border-color: #9769cc;
+}
+
+.mbsc-material.mbsc-segmented-button.mbsc-button.mbsc-selected {
+  background-color: #13132b;
+  border-bottom: 2px solid #9769cc;
+}
+
+.mbsc-material.mbsc-segmented-button.mbsc-button {
+  border: none;
+  color: white;
+}
+
+.mbsc-ios-dark.mbsc-schedule-header-day-today,
+.mbsc-ios-dark.mbsc-calendar-today {
+  color: #9769cc;
+}
+
+.mbsc-ios-dark.mbsc-schedule-time-indicator-day:before {
+  background-color: #9769cc;
+}
+
+.mbsc-ios-dark.mbsc-schedule-header {
+  background-color: #13132b;
+}
+
+.mbsc-ios-dark.mbsc-calendar-button.mbsc-button {
+  color: white;
+}
+
+.mbsc-ios-dark.mbsc-schedule-header-day.mbsc-selected {
+  background-color: #9769cc;
+  color: white;
+}
+
+.mbsc-ios-dark.mbsc-calendar {
+  border-radius: 12px;
+}
+
+.mbsc-ios-dark.mbsc-schedule-grid-wrapper,
+.mbsc-ios-dark.mbsc-calendar-cell {
+  background-color: #22223a;
+}
+/////////////////////
+::-webkit-scrollbar {
+  width: 0;
 }

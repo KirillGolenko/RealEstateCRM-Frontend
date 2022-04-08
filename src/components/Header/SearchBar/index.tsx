@@ -6,13 +6,13 @@ import 'antd/dist/antd.css';
 const SearchBar = () => {
   const { Search } = Input;
 
-  const handleSearch = () => {};
+  // const handleSearch = () => {};
 
   return (
     <Search
       className='search-bar'
       placeholder='Search'
-      onSearch={() => handleSearch()}
+      // onSearch={() => handleSearch()}
     />
   );
 };

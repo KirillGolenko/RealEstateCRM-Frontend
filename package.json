@@ -19,12 +19,12 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-        "eslint --quiet --cache --fix"
+      "eslint --quiet --cache --fix"
     ],
     "*.{json,js,ts,jsx,tsx,html}": [
-        "prettier --write"
+      "prettier --write"
     ]
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.7",
+    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.15.2.tgz",
     "antd": "^4.19.3",
     "axios": "^0.26.1",
     "eslint-config-airbnb": "^19.0.4",
