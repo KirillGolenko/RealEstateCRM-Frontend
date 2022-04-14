@@ -13,7 +13,7 @@ export const sidebarValues = [
   },
   {
     name: 'Tasks',
-    primalSrc: '',
+    primalSrc: '/assets/tasks-primal.svg',
     secondarySrc: '/assets/tasks.svg',
     alt: 'Tasks logo',
   },

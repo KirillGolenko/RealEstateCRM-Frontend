@@ -6,6 +6,7 @@ import DashBoard from './components/Dashboard';
 import ForgotPass from './components/ForgotPass';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import TasksList from './components/TasksList';
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
       <Route path='login' element={<Login />} />
       <Route path='dashboard' element={<DashBoard />} />
       <Route path='calendar' element={<Calendar />} />
-      <Route path='tasks' element={<DashBoard />} />
+      <Route path='tasks' element={<TasksList />} />
       <Route path='property' element={<DashBoard />} />
       <Route path='employees' element={<DashBoard />} />
       <Route path='clients' element={<DashBoard />} />
