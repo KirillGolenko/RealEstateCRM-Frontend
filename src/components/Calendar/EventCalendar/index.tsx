@@ -22,15 +22,15 @@ const MainCalendar = () => {
 
   // const createEvent = useCallback((event) => {
   //   setEvents([...event.event]);
-  //   console.log(event.event);
   // }, []);
 
   const onEventClick = useCallback((event) => {
     // setEvents([...event.event]);
-    // console.log(event.event);
   }, []);
 
-  const changeView = (event: any) => {
+  const changeView = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     let calView: MbscEventcalendarView;
 
     switch (event.target.value) {

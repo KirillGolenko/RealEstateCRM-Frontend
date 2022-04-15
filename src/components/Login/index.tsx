@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import { ILoginForm } from '../../types';
 
@@ -19,6 +20,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const handleLogin = async (values: ILoginForm) => {
@@ -29,6 +31,7 @@ const Login = () => {
       }
     );
     localStorage.setItem('token', data.data);
+    navigate('/dashboard');
   };
 
   return (
